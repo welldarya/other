@@ -1,0 +1,117 @@
+<Window x:Class="DemoApp.DE.WorkExecution"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoApp.DE"
+        mc:Ignorable="d"
+        Title="Обработка заявки" Height="700" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFCEDAEC">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="75"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Grid.Row="1" 
+               Content="Идентификатор заявки" VerticalAlignment="Center" HorizontalAlignment="Right"
+               FontStyle="Italic" Foreground="#FF535353" FontSize="14"></Label>
+        <ComboBox Grid.Column="3" Grid.Row="1" Height="40"></ComboBox>
+        <Label Grid.Column="1" Grid.Row="2" 
+               Content="Описание неисправности" VerticalAlignment="Center" HorizontalAlignment="Right"
+               FontStyle="Italic" Foreground="#FF535353" FontSize="14"></Label>
+        <TextBox Grid.Column="3" Grid.Row="2"></TextBox>
+        <Label Grid.Column="1" Grid.Row="4" 
+               Content="Вид работ" VerticalAlignment="Center" HorizontalAlignment="Right"
+               FontStyle="Italic" Foreground="#FF535353" FontSize="14"></Label>
+        <Label Grid.Column="1" Grid.Row="5" 
+               Content="Исполнитель" VerticalAlignment="Center" HorizontalAlignment="Right"
+               FontStyle="Italic" Foreground="#FF535353" FontSize="14"></Label>
+        <ComboBox Grid.Column="3" Grid.Row="4" Height="40"></ComboBox>
+        <ComboBox Grid.Column="3" Grid.Row="5" Height="40"></ComboBox>
+        <Button Grid.Column="4" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                Style="{DynamicResource BorderButton}" Width="170" Height="50"
+                Content="Завершить" Background="#FF5B9BD5" Foreground="White" FontSize="18" RenderTransformOrigin="0.453,-2.561"/>
+        <Rectangle Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Grid.RowSpan="3" Stroke="#FF5B9BD5"></Rectangle>
+        <Grid Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="4" Grid.RowSpan="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <CheckBox Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"></CheckBox>
+                <Label Grid.Row="1" Content="В ожидании" HorizontalAlignment="Center"></Label>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <CheckBox Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"></CheckBox>
+                <Label Grid.Row="1" Content="В работе" HorizontalAlignment="Center"></Label>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <CheckBox Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"></CheckBox>
+                <Label Grid.Row="1" Content="Не выполнено" HorizontalAlignment="Center"></Label>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <CheckBox Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"></CheckBox>
+                <Label Grid.Row="1" Content="Завершено" HorizontalAlignment="Center"></Label>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="4" Grid.RowSpan="3" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Width="170" Height="50"
+                    Content="Очистить" Background="#FF5B9BD5" Foreground="White" FontSize="18" RenderTransformOrigin="0.453,-2.561"></Button>
+            <Button Grid.Column="1" Width="170" Height="50"
+                    Content="Назначить" Background="#FF5B9BD5" Foreground="White" FontSize="18" RenderTransformOrigin="0.453,-2.561"></Button>
+            <Button Grid.Column="2" Width="170" Height="50"
+                    Content="Назад" Background="#FF5B9BD5" Foreground="White" FontSize="18" RenderTransformOrigin="0.453,-2.561"></Button>
+            <DataGrid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Тип работ" Width="300" Binding="{Binding id_заявки}"/>
+                    <DataGridTextColumn Header="Выполняет" Width="300" Binding="{Binding имя_оборудования}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>
